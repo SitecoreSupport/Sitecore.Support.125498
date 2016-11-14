@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using Sitecore.Data;
-using Sitecore.Data.IDTables;
-using Sitecore.Diagnostics;
-
-// TODO Improvements:
-// 1. Make thread-safe
-// 2. Replace 'add-delete' with 'update'
-
-namespace Sitecore.Support.ListManager.Locking
+﻿namespace Sitecore.Support.ListManager.Locking
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Globalization;
+  using System.Linq;
+  using Sitecore.Data;
+  using Sitecore.Data.IDTables;
+  using Sitecore.Diagnostics;
+
   public class IdTableListOperationsCountingLock : IListOperationsCountingLock
   {
     protected const string inProgressPrefix = "LM.InProgress";
@@ -246,6 +242,7 @@ namespace Sitecore.Support.ListManager.Locking
 
     protected void MarkAsComplete(string key, ID id)
     {
+      // Potential place for optimization: Replace 'add-delete' with 'update'
       var completeTime = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture);
       IDTable.RemoveKey(inProgressPrefix, key);
       IDTable.Add(completePrefix, key, id, ID.Null, completeTime);

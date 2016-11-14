@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.Builders;
-using Sitecore.Analytics.Data.DataAccess.MongoDb;
-
+﻿
 namespace Sitecore.Support.ListManager.ProcessingPool
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Reflection;
+  using MongoDB.Bson;
+  using MongoDB.Driver;
+  using MongoDB.Driver.Builders;
+  using Sitecore.Analytics.Data.DataAccess.MongoDb;
   using Sitecore.Analytics.Diagnostics.PerformanceCounters;
   using Sitecore.Analytics.Processing.ProcessingPool;
   using Sitecore.Collections;
@@ -184,8 +184,6 @@ namespace Sitecore.Support.ListManager.ProcessingPool
 
       update = builder;
     }
-
-
 
     protected ProcessingPoolItem TryMerge([NotNull] ProcessingPoolItem item)
     {
