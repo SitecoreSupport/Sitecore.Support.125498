@@ -102,14 +102,6 @@ namespace Sitecore.Support.ListManager
         return;
       }
 
-      var hasDataToUpdate = this.indexObserver.HasDataToProcess();
-
-      if (!hasDataToUpdate && !this.indexObserver.IsIndexJobInQueue())
-      {
-        this.contactListLock.Release(operations.Keys);
-        return;
-      }
-
       DateTime start, end;
       this.indexObserver.GetTimeOfLastCompleteJob(out start, out end);
 

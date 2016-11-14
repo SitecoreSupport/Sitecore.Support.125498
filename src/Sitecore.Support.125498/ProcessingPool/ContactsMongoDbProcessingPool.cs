@@ -438,6 +438,7 @@ namespace Sitecore.Support.ListManager.ProcessingPool
 
       bool hasOpearationIds = document.Contains(CustomFields.ContactListOperationIds);
 
+      // Maybe rework to deserialization pipeline or event
       ProcessingPoolItem result = hasOpearationIds ? new ListProcessingPoolItem() : new ProcessingPoolItem();
 
       if (document[Fields.Id].IsGuid)
