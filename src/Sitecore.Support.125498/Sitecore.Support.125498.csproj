@@ -118,11 +118,8 @@
     <Compile Include="UnlockContactListsAgent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\zzz\Sitecore.Support.125498.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="App_Config\Include\zzz\Sitecore.Support.125498.CM.config" />
+    <Content Include="App_Config\Include\zzz\Sitecore.Support.125498.Processing.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
